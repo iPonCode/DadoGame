@@ -55,13 +55,29 @@
 			isa = PBXGroup;
 			children = (
 				D035ABA721A63776003E1A1D /* AppDelegate.swift */,
-				D035ABA921A63776003E1A1D /* ViewController.swift */,
-				D035ABAB21A63776003E1A1D /* Main.storyboard */,
+				D04F945D21A647970066D3FB /* Controller */,
+				D04F945E21A647AB0066D3FB /* StoryBoard */,
 				D035ABAE21A6377A003E1A1D /* Assets.xcassets */,
-				D035ABB021A6377A003E1A1D /* LaunchScreen.storyboard */,
 				D035ABB321A6377A003E1A1D /* Info.plist */,
 			);
 			path = dadogame;
+			sourceTree = "<group>";
+		};
+		D04F945D21A647970066D3FB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D035ABA921A63776003E1A1D /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D04F945E21A647AB0066D3FB /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				D035ABAB21A63776003E1A1D /* Main.storyboard */,
+				D035ABB021A6377A003E1A1D /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RQUGBU2U53;
 				INFOPLIST_FILE = dadogame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +320,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RQUGBU2U53;
 				INFOPLIST_FILE = dadogame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
