@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,15 +14,73 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="dadogame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo-casino" translatesAutoresizingMaskIntoConstraints="NO" id="jUO-yY-gE6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htP-76-DcS">
+                                <rect key="frame" x="66" y="489" width="243" height="67"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="40"/>
+                                <state key="normal" title="Dame caña!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="rollPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yyF-1R-gDR"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="95E-av-Gaw">
+                                <rect key="frame" x="56.666666666666657" y="353" width="262" height="106"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice1" translatesAutoresizingMaskIntoConstraints="NO" id="Siq-yn-KNN">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice1" translatesAutoresizingMaskIntoConstraints="NO" id="ATV-0W-TQm">
+                                        <rect key="frame" x="156" y="0.0" width="106" height="106"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-dados" translatesAutoresizingMaskIntoConstraints="NO" id="sGa-UW-K4d">
+                                <rect key="frame" x="132.66666666666666" y="235" width="110" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="SvV-0M-g46"/>
+                                    <constraint firstAttribute="width" secondItem="sGa-UW-K4d" secondAttribute="height" multiplier="1:1" id="g23-pP-aGl"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jUO-yY-gE6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6De-ev-9fC"/>
+                            <constraint firstItem="sGa-UW-K4d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6ox-YH-M2x"/>
+                            <constraint firstItem="htP-76-DcS" firstAttribute="top" secondItem="95E-av-Gaw" secondAttribute="bottom" constant="30" id="BWN-ER-1Wm"/>
+                            <constraint firstItem="htP-76-DcS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C2W-xL-lyh"/>
+                            <constraint firstAttribute="bottom" secondItem="jUO-yY-gE6" secondAttribute="bottom" id="Pyg-yd-lBX"/>
+                            <constraint firstItem="jUO-yY-gE6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q6d-lf-hwv"/>
+                            <constraint firstItem="95E-av-Gaw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rjn-Qo-B5m"/>
+                            <constraint firstAttribute="bottom" secondItem="jUO-yY-gE6" secondAttribute="bottom" id="W0G-Rj-5aV"/>
+                            <constraint firstAttribute="trailing" secondItem="jUO-yY-gE6" secondAttribute="trailing" id="WMf-aW-8n8"/>
+                            <constraint firstItem="jUO-yY-gE6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bgZ-HI-Cvk"/>
+                            <constraint firstItem="jUO-yY-gE6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nEh-kn-M2m"/>
+                            <constraint firstItem="95E-av-Gaw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nQO-X2-nxn"/>
+                            <constraint firstAttribute="bottom" secondItem="jUO-yY-gE6" secondAttribute="bottom" id="slp-lf-136"/>
+                            <constraint firstItem="95E-av-Gaw" firstAttribute="top" secondItem="sGa-UW-K4d" secondAttribute="bottom" constant="8" id="tdJ-AO-MgI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageViewDiceLeft" destination="Siq-yn-KNN" id="Nrb-Li-LWG"/>
+                        <outlet property="imageViewDiceRight" destination="ATV-0W-TQm" id="kGa-Mu-1dl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="132.68365817091455"/>
+            <point key="canvasLocation" x="128.80000000000001" y="130.04926108374386"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dice1" width="106.66666412353516" height="106.66666412353516"/>
+        <image name="fondo-casino" width="400" height="300"/>
+        <image name="logo-dados" width="384" height="384"/>
+    </resources>
 </document>
