@@ -17,12 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo-casino" translatesAutoresizingMaskIntoConstraints="NO" id="jUO-yY-gE6">
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondo-casino" translatesAutoresizingMaskIntoConstraints="NO" id="jUO-yY-gE6">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htP-76-DcS">
-                                <rect key="frame" x="66" y="489" width="243" height="67"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="40"/>
+                                <rect key="frame" x="81.666666666666686" y="467" width="212" height="60"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="35"/>
                                 <state key="normal" title="Dame caña!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -41,36 +41,41 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-dados" translatesAutoresizingMaskIntoConstraints="NO" id="sGa-UW-K4d">
-                                <rect key="frame" x="132.66666666666666" y="235" width="110" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="SvV-0M-g46"/>
-                                    <constraint firstAttribute="width" secondItem="sGa-UW-K4d" secondAttribute="height" multiplier="1:1" id="g23-pP-aGl"/>
-                                </constraints>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxh-jO-rOu">
+                                <rect key="frame" x="176.33333333333334" y="382" width="22.666666666666657" height="48"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo-dados-texto" translatesAutoresizingMaskIntoConstraints="NO" id="ldL-kW-M0u">
+                                <rect key="frame" x="54" y="224" width="267" height="150"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Dxh-jO-rOu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5hf-Qn-1hd"/>
                             <constraint firstItem="jUO-yY-gE6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6De-ev-9fC"/>
-                            <constraint firstItem="sGa-UW-K4d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6ox-YH-M2x"/>
-                            <constraint firstItem="htP-76-DcS" firstAttribute="top" secondItem="95E-av-Gaw" secondAttribute="bottom" constant="30" id="BWN-ER-1Wm"/>
+                            <constraint firstItem="htP-76-DcS" firstAttribute="top" secondItem="95E-av-Gaw" secondAttribute="bottom" constant="8" id="BWN-ER-1Wm"/>
                             <constraint firstItem="htP-76-DcS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C2W-xL-lyh"/>
+                            <constraint firstItem="Dxh-jO-rOu" firstAttribute="top" secondItem="ldL-kW-M0u" secondAttribute="bottom" constant="8" id="JTu-Uc-CQ3"/>
+                            <constraint firstItem="ldL-kW-M0u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MmN-d9-gVw"/>
                             <constraint firstAttribute="bottom" secondItem="jUO-yY-gE6" secondAttribute="bottom" id="Pyg-yd-lBX"/>
                             <constraint firstItem="jUO-yY-gE6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q6d-lf-hwv"/>
                             <constraint firstItem="95E-av-Gaw" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rjn-Qo-B5m"/>
                             <constraint firstAttribute="bottom" secondItem="jUO-yY-gE6" secondAttribute="bottom" id="W0G-Rj-5aV"/>
                             <constraint firstAttribute="trailing" secondItem="jUO-yY-gE6" secondAttribute="trailing" id="WMf-aW-8n8"/>
                             <constraint firstItem="jUO-yY-gE6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bgZ-HI-Cvk"/>
+                            <constraint firstItem="Dxh-jO-rOu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eRq-bZ-FUX"/>
                             <constraint firstItem="jUO-yY-gE6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nEh-kn-M2m"/>
                             <constraint firstItem="95E-av-Gaw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nQO-X2-nxn"/>
                             <constraint firstAttribute="bottom" secondItem="jUO-yY-gE6" secondAttribute="bottom" id="slp-lf-136"/>
-                            <constraint firstItem="95E-av-Gaw" firstAttribute="top" secondItem="sGa-UW-K4d" secondAttribute="bottom" constant="8" id="tdJ-AO-MgI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="imageViewDiceLeft" destination="Siq-yn-KNN" id="Nrb-Li-LWG"/>
                         <outlet property="imageViewDiceRight" destination="ATV-0W-TQm" id="kGa-Mu-1dl"/>
+                        <outlet property="labelResult" destination="Dxh-jO-rOu" id="dyd-ap-zMk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -81,6 +86,6 @@
     <resources>
         <image name="dice1" width="106.66666412353516" height="106.66666412353516"/>
         <image name="fondo-casino" width="400" height="300"/>
-        <image name="logo-dados" width="384" height="384"/>
+        <image name="logo-dados-texto" width="684" height="384"/>
     </resources>
 </document>

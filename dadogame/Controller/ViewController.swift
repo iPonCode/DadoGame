@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var imageViewDiceLeft: UIImageView!
     @IBOutlet weak var imageViewDiceRight: UIImageView!
+    @IBOutlet weak var labelResult: UILabel!
     
     var randomDiceIndexLeft : Int = 0
     var randomDiceIndexRight : Int = 0
@@ -38,7 +39,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a nib.
     }
     
     // método que se llama al pulsar el botón
@@ -59,8 +60,49 @@ class ViewController: UIViewController {
         randomDiceIndexLeft = Int(arc4random_uniform(UInt32(nFaces)))
         randomDiceIndexRight = Int(arc4random_uniform(UInt32(nFaces)))
         print ("Indice izquierdo: \(randomDiceIndexLeft) , Indice derecho: \(randomDiceIndexRight)")
+        //print("lo que le paso a diceImage es: \(Int(nFaces)+1)")
+        //me llevo las siguientes cuatro líneas al método animate del UIView para hacer la animación
+        //imageViewDiceLeft.image = UIImage(named: diceImage[randomDiceIndexLeft])
+        //imageViewDiceRight.image = UIImage(named: diceImage[randomDiceIndexRight])
+        //labelResult.text = String(randomDiceIndexLeft + randomDiceIndexRight + 2)
+        //ocultamos el resultado para mostrarlo cuando la animación haya terminado y no desvelarlo antes de tiempo, es decir, antes de que los dados terminen de moverse
+        //labelResult.alpha = 0.0
+        //labelResult.text = "?"
+        
+        //Animaciones
+        UIView.animate(withDuration: 0.4, delay: 0.3, options: UIView.AnimationOptions.curveEaseInOut, animations: {
+            //aquí hacemos las animaciones, para ello accedemos a un componente que se llama transform para hacer una transformación afín y hay varios constructores: escalado, rotar, mover.. y hay un contructor que lo combina todo
+            /*self.imageViewDiceLeft.transform = CGAffineTransform(rotationAngle: CGFloat.pi/2)
+             self.imageViewDiceLeft.transform = CGAffineTransform(translationX: 0, y: 100)
+             self.imageViewDiceLeft.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)*/
+            //comento lo anterior para hacer lo mismo de otra forma:
+            //cualquier transformación afín se puede concatenar con otra transformación afín, eso hacemos a continuación
+            
+            self.imageViewDiceLeft.transform = CGAffineTransform(scaleX: 0.3, y: 0.3).concatenating(CGAffineTransform(rotationAngle: CGFloat.pi/2)).concatenating(CGAffineTransform(translationX: -70, y: 70))
+            self.imageViewDiceRight.transform = CGAffineTransform(scaleX: 0.3, y: 0.3).concatenating(CGAffineTransform(rotationAngle: CGFloat.pi/2)).concatenating(CGAffineTransform(translationX: 70, y: 70))
+            //hacemos desaparecer el dado después de la animación
+            self.imageViewDiceLeft.alpha = 0.0
+            self.imageViewDiceRight.alpha = 0.0
+            //mostramos la ¿? en la etiqueta de resultado
+            self.labelResult.text = "¿?"
+
+        }) { (completed) in
+            //lo primero una vez acabada la animación, devolvemos el estado a la identidad
+            self.imageViewDiceLeft.transform = CGAffineTransform.identity
+            self.imageViewDiceRight .transform = CGAffineTransform.identity
+            //volvemos ha hacer aparecer el dado después de la animación
+            self.imageViewDiceLeft.alpha = 1.0
+            self.imageViewDiceRight.alpha = 1.0
+            //volvermos ha hacer aparecer el resultado después de la animación
+            //self.labelResult.alpha = 1.0
+            //mostramos el resultado
+            self.labelResult.text = String(self.randomDiceIndexLeft + self.randomDiceIndexRight + 2)
+
+            //aquí hay que añadir self para acceder a la variable de la propia clase puesto que estos clouseres no están vinculados directamente al controlador, viven un poco donde les da la gana y hay que dejarlo claro porque sino el compilador se queja
+            self.imageViewDiceLeft.image = UIImage(named: self.diceImage[self.randomDiceIndexLeft])
+            self.imageViewDiceRight.image = UIImage(named: self.diceImage[self.randomDiceIndexRight])
+            self.labelResult.text = String(self.randomDiceIndexLeft + self.randomDiceIndexRight + 2)
+        }
     }
-
-
 }
 
