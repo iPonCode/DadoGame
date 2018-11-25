@@ -104,5 +104,20 @@ class ViewController: UIViewController {
             self.labelResult.text = String(self.randomDiceIndexLeft + self.randomDiceIndexRight + 2)
         }
     }
+    
+    //Utilizar la accion (o gesto) de agitar el dispositivo
+    //lo primero sobreescribimos este método de la clase UIViewController devolviendo un valor true para indicar que a partir de ahora estamos capacitados para responder a movimientos del dispositivo como al acelerómetro o al agitado (shake) del dispositivo
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    //sobreescribiendo un segundo método programamos la respuesta al agitado del dispositivo. Hay varios métodos relacionados con el movimiento: cuando empieza, cuando acaba o cuando se cancela, aquí utilizaremos cuando acaba
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        //comprobamos si el evento que recibe es el de agitado
+        if motion == .motionShake {
+            generateRandomDices()
+        }
+    }
+    
 }
 
